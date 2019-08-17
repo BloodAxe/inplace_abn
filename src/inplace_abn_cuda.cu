@@ -219,7 +219,7 @@ at::Tensor backward_template(const at::Tensor& xhat_, const at::Tensor& dy_, con
       xhat_accessor, dy_accessor, dx_accessor, var_accessor, count_accessor, sum_dy_accessor, sum_xhat_dy_accessor,
       weight_accessor, eps);
 
-  return dx.view(xhat_.sizes());
+  return dx.reshape(xhat_.sizes());
 }
 
 /***********************************************************************************************************************
